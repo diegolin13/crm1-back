@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const app = express();
-// const dbconexion = require('./dbconnection');
+
 
 
 // settings
@@ -12,7 +12,11 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}))
 
 //controllers
-require('./controllers/TicketsController')(app);
+// require('./controllers/TicketsController')(app);
+// require('./controllers/ClienteController')(app);
+
+//controllers
+require('./controllers/index')(app);
 
 
 app.listen(app.get('port'), () => {
