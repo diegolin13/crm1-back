@@ -79,7 +79,7 @@ module.exports = function (app) {
             } else {
                 res.json({
                     ok: true,
-                    ticket
+                    ticketData
                 });
             }
         });
