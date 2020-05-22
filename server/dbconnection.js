@@ -5,7 +5,7 @@ const connection = mysql.createConnection({
     user     : 'mperez',
     password : 'UUpzNvi9huoAF4SXMJ',
     database: 'trigarante2020-Pruebas',
-    debug: false,
+    timezone: 'GMT-5'
 });
 connection.connect(function(err) {
     if (err) {

@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const app = express();
+const puerto = 3000;
 
 
 
 // settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || puerto);
 
 //middlewares
 app.use(bodyparser.json());
@@ -20,6 +21,6 @@ require('./controllers/index')(app);
 
 
 app.listen(app.get('port'), () => {
- console.log(`server works`);
+ console.log(`server on port: ${puerto}`);
 });
 

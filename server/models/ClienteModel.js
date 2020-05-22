@@ -26,4 +26,17 @@ clienteModel.getClienteById = (idCliente, callback) => {
     }
 }
 
+clienteModel.getClienteByEmail = (email, callback) => {
+    if (connection) {
+        const sql = `SELECT * FROM cliente WHERE correo = ?`;
+        connection.query(sql, [email], (err, rows) => {
+            if(err) {
+                throw err;
+            } else {
+                callback(null, rows);
+            }
+        });
+    }
+}
+
 module.exports = clienteModel;

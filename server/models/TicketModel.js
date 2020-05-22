@@ -80,7 +80,7 @@ ticketModel.insertTicket = (ticketData, callback) => {
             }
         }) ;
     }
-}
+};
 
 
 module.exports = ticketModel;

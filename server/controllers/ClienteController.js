@@ -1,6 +1,7 @@
 const Cliente = require('../models/ClienteModel');
 
 module.exports = function (app) {
+
     app.get('/clientes', (req, res) => {
        Cliente.getClientes((err, clientes) => {
            if (err) {
@@ -32,5 +33,22 @@ module.exports = function (app) {
                });
            }
        });
+    });
+
+    app.get('/clientes-email/:email', (req,res) => {
+       const email = req.params.email;
+        Cliente.getClienteByEmail(email, (err, cliente) => {
+           if (err) {
+               return res.status(400).json({
+                  ok: false,
+                  message: err,
+               });
+           }  else {
+               res.json({
+                   ok: true,
+                  cliente
+               });
+           }
+        });
     });
 }
