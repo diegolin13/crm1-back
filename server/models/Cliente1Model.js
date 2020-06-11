@@ -28,4 +28,17 @@ Cliente1Model.getCliente1ByEmail = (email, callback) => {
     }
 }
 
+Cliente1Model.getextensions = (callback) => {
+    if(connection) {
+        connection.query('SELECT * FROM extensions' , (err, rows) => {
+           if(err) {
+               throw err;
+           } else {
+               callback(null, rows)
+           }
+        });
+    }
+}
+
+
 module.exports = Cliente1Model;
